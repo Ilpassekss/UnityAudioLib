@@ -156,7 +156,7 @@ public class FMODAudioInput : MonoBehaviour
                 {
                     fftProcessor.DFT(audioBuffer, fftOutput, 1);
 
-                    // Находим частоту с максимальной амплитудой (пропуская DC компонент)
+                    
                     int maxBin = 0;
                     float maxMagnitude = 0f;
                     
@@ -260,7 +260,7 @@ public class FMODAudioInput : MonoBehaviour
 
         recordingSound.getLength(out soundLength, FMOD.TIMEUNIT.PCM);
 
-        // Будем брать с начала записи, если запись закольцована — позиция сама сбрасывается
+        
         // fmod can work like circled buffer 
         uint startPos = (recPos >= fftSize) ? (recPos - (uint)fftSize) : 0;
 
